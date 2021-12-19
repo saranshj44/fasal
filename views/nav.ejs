@@ -1,0 +1,57 @@
+<nav>
+    <div class="menuicon">
+        <span class="fas fa-bars"></span>
+    </div>
+    <div class="logoo">
+        <img src="../images/logo7.png" />
+    </div>
+    <div class="navitems">
+        <li><a href="/profile">Home</a></li>
+        <li><a href="/viewprofile">View Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <!-- <li><a href="#">
+                <div class="dropdown show">
+                    <a class="btn dropdown-toggle dropdown-navi" href="#" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Booking Management
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="addcar.html">Add Vehicle</a>
+                        <a class="dropdown-item" href="myvehicle.html">My Vehicle</a>
+
+                    </div>
+                </div>
+            </a></li> -->
+        <!-- <li><a href="#">
+                <div class="dropdown show">
+                    <a class="btn dropdown-toggle dropdown-navi" href="profile.html" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="profile.html">View Profile</a>
+                        <a class="dropdown-item" href="editprofile.html">Edit Profile</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+            </a></li>
+        <li><a href="favourites.html">Favourites</a></li> -->
+        <!-- <li><a href="#">Feedback</a></li> -->
+    </div>
+    <div class="searchicon">
+        <span class="fas fa-search"></span>
+    </div>
+    <div class="cancelicon">
+        <span class="fas fa-times"></span>
+    </div>
+    <form action="/search" method="GET">
+        <% if(namee==undefined){ %>
+        <input type="search" name="name" value="" class="search-data" placeholder="Search" required>
+        <%}else{%>
+        <input type="search" name="name" value="<%= namee %>" class="search-data" placeholder="Search" required>
+        <%}%>
+        <button type="submit" class="fas fa-search"></button>
+    </form>
+</nav>

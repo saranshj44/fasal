@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../stylesheets/navigation.css">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/.png">
+    <title>Profile</title>
+    <Style>
+      input{
+        background: none !important;
+        border-bottom: 2px solid rgb(20, 20, 20) !important;
+        border: none;
+        margin-bottom: 10px;
+      }
+      textarea{
+        background:none !important;
+      }
+    </Style>
+  </head>
+  <body>
+    <%- include nav.ejs %>
+    <div class="container">
+        <div class="row pt-5 row1">
+            <div class="col-lg-3 p-0">
+                <img src="../images/team1.jpg">
+            </div>
+            <div class="col-lg-9 pt-3">
+              <div class="d-flex justify-content-between py-2">
+                <div class="d-md-flex d-sm-block">
+                  <h3><%= data.username %></h3>
+                  <p id="location" class="text-muted p-2"> <i class="fa fa-map-marker"></i>
+                    <%= data.Address %></input>
+                </div>
+                <h5 id="savedetails" ><i class="fa fa-check"></i>Update</h5>
+              </div>
+            <form action="">
+                <input style="display: none;" type="file" name="" id="upload_profile">
+            </form>
+            <a id="new_profile"><i class="fa fa-plus"></i>New Photo</a>
+            </div>
+        </div>
+        <div class="row pt-3 row2">
+          <!-- <form action="" method="post"> -->
+            <div class="col-lg-3">
+              <div class="d-flex">
+                <h6>Personal</h6>
+                <hr>
+              </div>
+              <form action="/savepersonal" method="post">
+                <h5>Age</h5>
+                <input type="text" name="age" value="<%= data.age %>"></input>
+                <h5>Date of birth</h5>
+                <input type="text" name="dob" value="<%= data.dob%>"></input>
+                <h5>Gender</h5>
+                <input type="text" name="gender" value="<%= data.gender%>"></input>
+                <br>
+                <br>
+                <!-- <button style="padding: 5px 15px; background-color: #838383; color: #fff ;border: none;" type="submit">Save</button> -->
+                <button type="Submit" class="upass"> Save</button>
+              </form>
+            </div>
+            <div class="col-lg-9 contact">
+
+              <div class="d-flex">
+                <h6>Contact Information</h6>
+                <hr>
+              </div>
+              <form id="savedata" action="/savedetails" method="post">
+              <div class="row">
+                <div class="col-lg-5">
+                  <h6><i class="fa fa-phone"></i>Phone Number</h6>
+                </div>
+                <div class="col-lg-7">
+                  <input name="phone" value="<%= data.phone %>" type="text"></input>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-5">
+                  <h6><i class="fa fa-phone"></i>Email Address</h6>
+                </div>
+                <div class="col-lg-7">
+                  <input name="email" value="<%= data.email %>" type="text"></input>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-5">
+                  <h6><i class="fa fa-map-marker"></i>Address</h6>
+                </div>
+                <div class="col-lg-7">
+                  <textarea name="Address" value="" type="text"><%= data.Address%></textarea>
+                </div>
+              </div>
+              </form>
+              
+            </div>
+          <!-- </form> -->
+        </div>
+        <div class="row pt-3 row3">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-9">
+            <div class="d-flex">
+              <h6>Change Password</h6>
+              <hr>
+            </div>
+           <form action="/updatepassword" method="post">
+             <div class="row">
+               <div class="col-md-5">
+                 <label for="">Old Password</label>
+               </div>
+               <div class="col-md-7">
+                 <input name="oldpassword" type="password">
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-md-5">
+                 <label for="">New Password</label>
+               </div>
+               <div class="col-md-7">
+                 <input name="newpassword" type="password">
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-md-5">
+
+               </div>
+               <div class="col-md-7">
+                 <button type="Submit" class="upass"> Update Password</button>
+               </div>
+             </div>
+           </form>
+          </div>
+         
+        </div>
+        
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        document.querySelector('#new_profile').addEventListener('click',function(){
+          document.querySelector('#upload_profile').click();
+        })
+        document.querySelector('#savedetails').addEventListener('click',function(){
+          document.querySelector('#savedata').submit();
+        })
+      </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../javascripts/navigation.js"></script>
+  </body>
+</html>

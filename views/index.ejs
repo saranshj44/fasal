@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/navbar.css">
+  <link rel="stylesheet" href="../stylesheets/style.css" />
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/.png">
+  <title>Sign in & Sign up Form</title>
+</head>
+
+<body>
+
+  <a href="index.ejs">
+    <div class="logo">
+      <img src="../images/logo52.png" alt="" srcset="">
+    </div>
+  </a>
+  <a href="index.ejs">
+    <div class="logo2">
+      <img src="../images/logo62.png" alt="" srcset="">
+    </div>
+  </a>
+  <div class="containers">
+    <div class="forms-containers">
+      <div class="signin-signup">
+        <form method="POST" action="/login" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" name="username" placeholder="Username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" />
+          </div>
+          <!-- <p class="show_pass"><input class="showpass" type="checkbox"><span class="showpass_label">Show Password</span>
+          </p> -->
+          <input type="submit" value="Login" class="btn solid" />
+          <label style="cursor: pointer;color:blue ;">Forgot Password ?</label>
+        </form>
+        <form method="POST"  action="/register" class="sign-up-form">
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" name="username" placeholder="Full Name" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-phone"></i>
+            <input type="Number" name="phone" placeholder="Mobile Number" />
+          </div>
+
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" />
+          </div>
+          <input type="submit" class="btn" value="Sign up" />
+        </form>
+      </div>
+    </div>
+
+    <div class="panels-containers">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>New here ?</h3>
+          <p>
+            If you're dealer looking to grow your bussiness , Join us now !
+          </p>
+          <button class="btn transparent" id="sign-up-btn">
+            Sign up
+          </button>
+        </div>
+        <img src="../images/one.png" class="image" alt="" />
+      </div>
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>One of us ?</h3>
+          <p>
+            Already a user , click below to sign in to your account
+          </p>
+          <button class="btn transparent" id="sign-in-btn">
+            Sign in
+          </button>
+        </div>
+        <img src="../images/By_my_car-bro_(2).png" class="image" alt="" />
+      </div>
+    </div>
+  </div>
+  <script>
+    var logo = document.querySelector('.logo');
+    var btn = document.querySelector('#sign-up-btn');
+    var logo2 = document.querySelector('.logo2');
+    var btn2 = document.querySelector('#sign-in-btn');
+    btn.addEventListener('click', function () {
+      logo.style.display = "none";
+      logo2.style.display = "block";
+    })
+    btn2.addEventListener('click', function () {
+      logo2.style.display = "none";
+      logo.style.display = "block";
+    })
+  </script>
+  <script src="../javascripts/login.js"></script>
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

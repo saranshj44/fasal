@@ -1,0 +1,269 @@
+:root{
+  --main-bg-color: #007991;
+  --secondary-bg-color:#5ec9a9;
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  background: #f2f2f2;
+  height: 100%;
+  width: 100%;
+}
+p{
+  margin: 0 !important;
+}
+li{
+  list-style: none;
+}
+nav{
+  background:var(--main-bg-color);  
+	background: -webkit-linear-gradient(to right, var(--secondary-bg-color),var(--main-bg-color));  
+	background: linear-gradient(to right, var(--secondary-bg-color),var(--main-bg-color)); 
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 100px ;
+}
+
+
+nav .navitems{
+  display: flex ;
+  flex: 1;
+  padding: 0 0 0 40px;
+}
+nav .navitems li{
+  list-style: none;
+  padding: 0 15px;
+}
+nav .navitems li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  margin: auto 0px;
+} 
+nav .navitems li a:hover{
+  color: white;
+}
+.dropdown-navi{
+  padding: 0px !important;
+  outline: none !important;
+}
+.dropdown-item{
+  color: var(--main-bg-color) !important;
+}
+.dropdown-item.active, .dropdown-item:active{
+  background-color: white !important;
+  color: #171b24 !important;
+}
+
+.dropdown-navi:active , .dropdown-navi:focus,.btn.focus, .btn:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+.dropdown-menu{
+  border-radius: 3px;
+}
+nav form{
+  display: flex;
+  height: 40px;
+  padding: 2px;
+  background: white;
+  min-width: 18%!important;
+  border-radius: 2px;
+  border: 1px solid rgba(155,155,155,0.2);
+}
+nav form .search-data{
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  color: black;
+  font-size: 17px;
+  border: none;
+  font-weight: 500;
+  background: white;
+}
+nav form button{
+  padding: 0 15px;
+  color: #fff;
+  font-size: 17px;
+  background:var(--main-bg-color);  
+	background: -webkit-linear-gradient(to right, var(--secondary-bg-color),var(--main-bg-color));  
+	background: linear-gradient(to right, var(--secondary-bg-color),var(--main-bg-color)); 
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+/* nav form button:hover{
+  background: #e63600;
+} */
+nav .menuicon,
+nav .cancelicon,
+nav .searchicon{
+  width: 40px;
+  text-align: center;
+  margin: 0 50px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+nav .menuicon span,
+nav .cancelicon,
+nav .searchicon{
+  display: none;
+}
+.cancelicon span{
+  color: white !important;
+}
+@media (max-width: 1245px) {
+  nav{
+    padding: 0 50px;
+  }
+}
+@media (max-width: 1140px){
+  nav{
+    padding: 0px;
+  }
+  nav .logoo{
+    flex: 2;
+    text-align: center;
+  }
+  nav .navitems{
+    position: fixed;
+    z-index: 99;
+    top: 70px;
+    width: 100%;
+    left: -100%;
+    height: 100%;
+    padding: 10px 50px 0 50px;
+    /* text-align: center; */
+    /* background: #14181f; */
+    display: inline-block;
+    transition: left 0.3s ease;
+  }
+  nav .navitems.active{
+    left: 0px;
+    background-color: white;
+  }
+  nav .navitems li{
+    line-height: 40px;
+    margin: 30px 0;
+    text-align: center;
+  }
+  nav .navitems li a{
+    font-size: 20px;
+    color: var(--main-bg-color);
+  }
+nav .navitems li a:hover{
+  color: black;
+}
+  nav form{
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: top 0.3s ease, opacity 0.1s ease;
+  }
+  nav form.active{
+    top: 95px;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 50;
+  }
+  nav form:before{
+    position: absolute;
+    content: "";
+    top: -13px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    border: 10px solid transparent;
+    
+    margin: -20px 0 0;
+  }
+  nav form:after{
+    position: absolute;
+    content: '';
+    height: 60px;
+    padding: 2px;
+    background:var(--main-bg-color);  
+    background: -webkit-linear-gradient(to right, var(--secondary-bg-color),var(--main-bg-color));  
+    background: linear-gradient(to right, var(--secondary-bg-color),var(--main-bg-color)); 
+    border-radius: 2px;
+    min-width: calc(100% + 20px);
+    z-index: -2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  nav .menuicon{
+    display: block;
+  }
+  nav .searchicon,
+  nav .menuicon span{
+    display: block;
+  }
+  nav .menuicon span.hide,
+  nav .searchicon.hide{
+    display: none;
+  }
+  nav .cancelicon.show{
+    display: block;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.content header{
+  font-size: 30px;
+  font-weight: 700;
+}
+.content .text{
+  font-size: 30px;
+  font-weight: 700;
+}
+.space{
+  margin: 10px 0;
+}
+nav .logoo.space{
+  color: red;
+  padding: 0 5px 0 0;
+}
+@media (max-width: 980px){
+  nav .menuicon,
+  nav .cancelicon,
+  nav .searchicon{
+    margin: 0 20px;
+  }
+  nav form{
+    right: 30px;
+  }
+}
+@media (max-width: 350px){
+  nav .menuicon,
+  nav .cancelicon,
+  nav .searchicon{
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}
+.logoo img{
+  width: 150px;
+  background-size: cover;
+ 
+}

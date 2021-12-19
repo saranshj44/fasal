@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <title>Responsive Navbar with Search Box | CodingNepal</title> -->
+    <link rel="stylesheet" href="../stylesheets/dashboard.css">
+    <link rel="stylesheet" href="../stylesheets/navigation.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/.png">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="boody">
+        <!-------------------------------navigation------------------------------------------------->
+        <%- include nav.ejs %>
+        <!--------------------------------------------body main--------------------------------------------->
+        <div class="container cont">
+            <div class="row">
+                <!----------------------------------------------main content cards------------------------------------------------->
+                <div class="col-xl-12 col-lg-12">
+                    <div class="row cards-div">
+                        <% if(!obj){ %>
+                            <h1>No Such Movie Found</h1>
+                        <% }else{ %>
+                            <% obj.forEach((detail)=>{ %>
+                            <div class="col-lg-4 col-md-6 col-12 p-lg-3">
+                                <div class="cards">
+                                    <!-- <div class="row">
+                                        <div class="col-12"><%= detail.Year%></div>
+                                        <div class="col-3">
+                                            <p class="float-right"><%= detail.Year%></p>
+                                        </div> 
+                                    </div>-->
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="card-pic" class="col-12">
+
+                                                <% if(detail.Poster==='N/A'){%>
+                                                <img src="https://media.comicbook.com/files/img/default-movie.png" />
+                                                <%}else{%>
+                                                <img src=<%= detail.Poster%> />
+                                                <%} %>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row py-2">
+                                        <div class="col-8 movie-modal"><i class="fa fa-movie"></i>Swift</div>
+                                        <div class="col-4">
+                                            <p class="float-right"><i class="fa fa-plus"></i> 2</p>
+                                        </div>
+                                    </div> -->
+                                    <div class="row py-2">
+                                        <div style="height: 80px;" class="col-12 movie-modal"><b><%= detail.Title%></b>
+                                        </div>
+                                        <div class="col-12"><b><%= detail.Year%></b></div>
+                                        <!-- <div class="col-6">
+                                            <p class="float-right movie-number">MP07CC7471</p>
+                                        </div> -->
+                                    </div>
+                                    <div style="box-sizing: border-box;" class="movie-button">
+                                        <div class="btn-movie">
+                                            <a href=<%= "/info/"+ detail.imdbID %>> <button>view details</button> </a>
+                                        </div>
+                                        <div class="heart-movie">
+                                            <a style="" href="/like/<%=detail.imdbID %>"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% })%>
+                        <% } %>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="../javascripts/dashboard.js"></script>
+    <script src="../javascripts/navigation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+
+/*================================================================================================================*/
+.carousel-indicators li{
+    border-radius: 50% !important;
+    height: 10px !important;
+    width: 10px !important;
+}
+.features-details .model{
+    display: flex;
+    text-align: left;
+
+}
+.features-details .model>h3{
+    width: 50%;
+}
+.features-details .model>h3>i{
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(214, 209, 209);
+    padding: 8px;
+    border-radius: 10px;
+}
+.features-details .model>h5{
+    width: 100%;
+}
+.features-details .model>h5>i{
+ margin-right: 10px;   
+}
+.description{
+    padding: 50px 25px;
+    text-align: left;    
+}
+.description>p{
+    margin-bottom: 20px!important;
+    line-height: 26px;
+    font-size: 20px;
+}
+.contact-icons{
+    margin-left: 10px;
+}
+.contact-icons p{
+    line-height: 30px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.contact-icons i{
+    margin-right: 10px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.596);
+}
