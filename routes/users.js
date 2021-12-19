@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 var plm = require('passport-local-mongoose');
 
-mongoose.connect('mongodb://localhost/fasal00');
+mongoose.connect('mongodb+srv://admin:admin@cluster0.9jaun.mongodb.net/fasal?retryWrites=true&w=majority',{useNewUrlParser: true,
+  useUnifiedTopology: true 
+}).then(() => console.log("Mongoose is connected")).catch(err => console.log(err))
 var userSchema = mongoose.Schema({
   username: String,
   email: String,
